@@ -1,0 +1,26 @@
+{
+  "name": "winterstorm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lazyy233/winterstorm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lazyy233/winterstorm/issues"
+  },
+  "homepage": "https://github.com/Lazyy233/winterstorm#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "random-puppy": "^1.1.0"
+  }
+}
