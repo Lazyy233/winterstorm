@@ -29,6 +29,8 @@ module.exports.run = async (bot, message, args) => {
     .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
     .addField("Status", status)
 
+    
+    message.delete()
     message.channel.send(userEmbed);
 }
 
