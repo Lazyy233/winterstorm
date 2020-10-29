@@ -33,15 +33,7 @@ fs.readdir("./commands/", (err, files) => {
         });
     });
 });
-bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
 
-if (message.content === ',suicide') {
-        message.delete()
-      message.channel.send('***'+message.author.username+' has committed suicide***');
-      message.member.kick();
-  }
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
@@ -54,6 +46,13 @@ bot.on("message", async message => {
     if(!message.content.startsWith(prefix)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(bot,message,args)
+    
+    
+    if (message.content === ',suicide') {
+        message.delete()
+      message.channel.send('***'+message.author.username+' has committed suicide***');
+      message.member.kick();
+  }
 
 })
 bot.login(process.env.TOKEN);
