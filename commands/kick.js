@@ -25,7 +25,8 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#ff2050")
     .setFooter(`Kicked by ${message.author.username}`);
     
-    message.channel.send(embed)
+ message.delete()   
+ message.channel.send(embed)
     
     target.kick(args[1]);
     
