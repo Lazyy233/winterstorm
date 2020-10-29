@@ -1,17 +1,20 @@
-module.exports = {
-    run: async(client, message, args) => {
+module.exports.run = async (bot, message, args) => {
+    if(!message.member.hasPermission('BAN_MEMBERS')) 
+        message.channel.send("Missing Permissions!");
+    else {
+        let bannedMember = await message.guild.members.ban(args);
+        if(bannedMember){
 
-if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Invalid Permissions")
-let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-if (!User) return message.channel.send("Invalid User")
-if (User.hasPermission("BAN_MEMBERS")) return message.reply("Missing Permissions")
-let banReason = args.join(" ").slice(22);
-if (!banReason) {
-  banReason = "None"
-}
+        try {
+            console.log(bannedMember.tag + "Was banned.");
+            message.channel.send (`${bannedMember} has been banned from the server!`)
+        }
+            catch(err) {
+            console.log(err);
+        }
     }
 }
-User.ban({reason: banReason})
+}
 
 module.exports.config = {
     name: "ban",
