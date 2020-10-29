@@ -11,6 +11,8 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(`From /r/${random}`)
     .setURL(`http://reddit.com/${random}`)
 
+    
+    message.delete()
     message.channel.send(embed);
 
 }
