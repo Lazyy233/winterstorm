@@ -33,6 +33,15 @@ fs.readdir("./commands/", (err, files) => {
         });
     });
 });
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+
+if (message.content === ',suicide') {
+        message.delete()
+      message.channel.send('***'+message.author.username+' has committed suicide***');
+      message.member.kick();
+  }
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
